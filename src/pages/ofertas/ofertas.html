@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title ></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+        <h2>Sublimación</h2>
+        <ion-img  (click)="cargarOfertas(1)"  style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/sublimacion.jpg"></ion-img>  
+      </ion-col >
+      <ion-col >
+        <h2>Solvente</h2>
+        <ion-img   (click)="cargarOfertas(2)" style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/solvente.jpg"></ion-img>  
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >
+       <h2>Fotografica</h2>
+       <ion-img  (click)="cargarOfertas(3)"  style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/fotografica.jpg"></ion-img>  
+      </ion-col>
+      <ion-col >
+        <h2>Tecnica</h2>
+       <ion-img    (click)="cargarOfertas(4)" style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/fotografica.jpg"></ion-img>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
