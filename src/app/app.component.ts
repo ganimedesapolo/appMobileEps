@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { OfertasPage } from '../pages/ofertas/ofertas';
+import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +27,7 @@ export class MyApp {
       { title: 'INICIO', component: HomePage },
       { title: 'LISTAS', component: ListPage },
       { title: 'OFERTAS', component: OfertasPage },
+      { title: 'PRODUCTOS', component: ProductosVistaPage },
     ];
 
   }

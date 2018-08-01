@@ -24,7 +24,7 @@ export class OfertaLineaPage {
 
 
   ionViewDidLoad() {
-     this.proveedor.obtenerDatos(this.idLineaOferta)
+     this.proveedor.obtenerDatosOfertas(this.idLineaOferta)
      .subscribe(
         (data)=>{this.ofertas=data;},
         (error)=>{console.log(error);}

@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { OfertasPage } from '../pages/ofertas/ofertas';
 import { OfertaLineaPage } from '../pages/oferta-linea/oferta-linea';
+import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
+import { ProductosLineaVistaPage } from '../pages/productos-linea-vista/productos-linea-vista';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +22,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     ListPage,
     OfertasPage,
-    OfertaLineaPage
+    OfertaLineaPage,
+    ProductosVistaPage,
+    ProductosLineaVistaPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     ListPage,
     OfertasPage,
-    OfertaLineaPage
+    OfertaLineaPage,
+    ProductosVistaPage,
+    ProductosLineaVistaPage
   ],
   providers: [
     StatusBar,
