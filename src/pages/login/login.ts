@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from '../../../node_modules/rxjs/Observable';
+import { HomePage } from '../../pages/home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -21,17 +22,17 @@ export class LoginPage {
   data:Observable<any>;
   dataResponse;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private menu:MenuController,public http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private menuLogin:MenuController,public http: HttpClient) {
   }
 
   ionViewDidLoad() {
-   // this.menu.swipeEnable(false);
+    //this.menuLogin.swipeEnable(false);
     console.log('ionViewDidLoad LoginPage');
   }
 
   ingresar(){
     let userData = {email:this.email,password:this.password};  
-    var url = 'http://localhost/epsonApp/public/api/loginViaApi'
+    var url = 'http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/loginViaApi'
     let postData = new FormData();
     postData.append('email',this.email);
     postData.append('password',this.password);
@@ -46,8 +47,11 @@ export class LoginPage {
                 console.log(this.isLogged);           
       },
       () => {  console.log(this.dataResponse); 
-               console.log(this.isLogged);          
-            }
+               console.log(this.isLogged);    
+               if(this.isLogged){
+                this.navCtrl.push(HomePage);
+                }
+             }
     )
   }
 
