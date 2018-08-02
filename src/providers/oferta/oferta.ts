@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import { Observable } from '../../../node_modules/rxjs/Observable';
 
 /*
   Generated class for the OfertaProvider provider.
@@ -23,6 +24,11 @@ export class OfertaProvider {
  
   obtenerDatosProductos(idLineaProducto:string){
     return this.http.get('http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/productoLinea/'+idLineaProducto);
+   }
+
+ 
+   login(userData:any){
+     return this.http.get('http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/users');
    }
 
 }

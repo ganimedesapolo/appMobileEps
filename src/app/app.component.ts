@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { OfertasPage } from '../pages/ofertas/ofertas';
 import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
+import { LoginPage } from '../pages/login/login';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

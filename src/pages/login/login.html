@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding >
+<br><br>
+   <ion-item>
+      <ion-label floating>Correo</ion-label>
+      <ion-input  type="email" [(ngModel)]="email" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label floating>Clave</ion-label>
+      <ion-input  type="password"  [(ngModel)]="password"></ion-input>
+    </ion-item>      
+    <br>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button block color="secondary" (click)="ingresar()">
+         Ingresar
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-content>
