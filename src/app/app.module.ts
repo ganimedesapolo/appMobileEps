@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { OfertasPage } from '../pages/ofertas/ofertas';
 import { OfertaLineaPage } from '../pages/oferta-linea/oferta-linea';
 import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
@@ -21,7 +20,6 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     OfertasPage,
     OfertaLineaPage,
     ProductosVistaPage,
@@ -37,7 +35,6 @@ import {HttpClientModule} from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     OfertasPage,
     OfertaLineaPage,
     ProductosVistaPage,
