@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OfertaProvider } from '../../providers/oferta/oferta';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+
 
 /**
  * Generated class for the OfertaLineaPage page.
@@ -17,13 +19,31 @@ import { OfertaProvider } from '../../providers/oferta/oferta';
 export class OfertaLineaPage {
   ofertas;
   idLineaOferta;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public proveedor:OfertaProvider) {
+  dataUsuario;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public proveedor:OfertaProvider,private nativeGeocoder: NativeGeocoder) {
     this.idLineaOferta=navParams.data.idLineaOferta;
   }
 
 
 
+
+  
+
   ionViewDidLoad() {
+
+    let options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5
+  };
+  
+  this.nativeGeocoder.reverseGeocode(4.5072095, 72.1452818, options)
+    .then((result: NativeGeocoderReverseResult[]) => console.log(JSON.stringify(result[0])))
+    .catch((error: any) => console.log(error));
+
+
+
+    this.dataUsuario=JSON.parse(window.localStorage['userData'] || '[]'); 
+     console.log(this.dataUsuario.data.name)
      this.proveedor.obtenerDatosOfertas(this.idLineaOferta)
      .subscribe(
         (data)=>{this.ofertas=data;},

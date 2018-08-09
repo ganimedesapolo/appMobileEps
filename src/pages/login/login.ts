@@ -32,7 +32,7 @@ export class LoginPage {
 
   ingresar(){
     let userData = {email:this.email,password:this.password};  
-    var url = 'http://localhost/epsonApp/public/api/loginViaApi'
+    var url = 'http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/loginViaApi'
     let postData = new FormData();
     postData.append('email',this.email);
     postData.append('password',this.password);
@@ -48,6 +48,7 @@ export class LoginPage {
       },
       () => {  console.log(this.dataResponse); 
                console.log(this.isLogged);  
+               window.localStorage['userData'] = JSON.stringify(this.dataResponse);
                if(this.isLogged){
                 this.navCtrl.push(HomePage);
                 }
