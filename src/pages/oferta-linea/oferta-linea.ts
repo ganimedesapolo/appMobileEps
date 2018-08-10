@@ -20,6 +20,7 @@ export class OfertaLineaPage {
   ofertas;
   idLineaOferta;
   dataUsuario;
+  resultadoGeocoder;
   constructor(public navCtrl: NavController, public navParams: NavParams,public proveedor:OfertaProvider,private nativeGeocoder: NativeGeocoder) {
     this.idLineaOferta=navParams.data.idLineaOferta;
   }
@@ -36,8 +37,8 @@ export class OfertaLineaPage {
       maxResults: 5
   };
   
-  this.nativeGeocoder.reverseGeocode(4.5072095, 72.1452818, options)
-    .then((result: NativeGeocoderReverseResult[]) => console.log(JSON.stringify(result[0])))
+  this.nativeGeocoder.reverseGeocode(4.5072095, -72.1452818, options)
+    .then((result: NativeGeocoderReverseResult[]) => this.resultadoGeocoder= JSON.stringify(result[0]))
     .catch((error: any) => console.log(error));
 
 
