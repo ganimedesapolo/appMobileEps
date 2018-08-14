@@ -9,15 +9,19 @@
 
 <ion-content padding>
  <h2>Ofertas</h2> 
- {{resultadoGeocoder}} 
+ <!-- {{resultadoGeocoder}} -->
+ {{codigoPais}} ---
+ {{latitud}} -----
+ {{longitud}}  -----
 <ion-list>
  <ion-grid  *ngFor="let oferta of ofertas">
    <ion-row>
     <ion-col style="text-align: left" >
     <b>Nombre</b> : {{oferta.titulo}}  <br>
     <b>Descripcion</b> : {{oferta.descripcion}}  <br>
-    <b>PDF </b>: <a target="_blank" href="{{oferta.file}}"><ion-icon name="document">&nbsp;&nbsp;</ion-icon></a> 
-   </ion-col>
+    <b>PDF </b>: <a target="_blank" href="{{oferta.file}}"><ion-icon name="document">&nbsp;&nbsp;</ion-icon></a> <br>
+    <b>Codigo Pais</b> : {{oferta.pais.codigo}} 
+  </ion-col>
   </ion-row>
  </ion-grid>
 </ion-list>

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 
 import { MyApp } from './app.component';
@@ -47,6 +49,7 @@ import {HttpClientModule} from '@angular/common/http';
     StatusBar,
     SplashScreen,
     NativeGeocoder,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     OfertaProvider
   ]
