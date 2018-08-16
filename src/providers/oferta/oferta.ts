@@ -16,8 +16,8 @@ export class OfertaProvider {
     console.log('Hello OfertaProvider Provider');
   }
 
-  obtenerDatosOfertas(idLineaOferta:string){
-   return this.http.get('http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/ofertaLinea/'+idLineaOferta);
+  obtenerDatosOfertas(idLineaOferta:string,codigoPais:string){
+   return this.http.get('http://ec2-18-218-167-21.us-east-2.compute.amazonaws.com/epsonWeb/desarrolloEps/public/api/ofertaLinea/'+idLineaOferta+"/"+codigoPais);
   }
 
 

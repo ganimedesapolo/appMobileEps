@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import { HttpClient } from '@angular/common/http';
 import { Observable } from '../../../node_modules/rxjs/Observable';
 import { HomePage } from '../../pages/home/home';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the LoginPage page.
  *
@@ -21,13 +23,52 @@ export class LoginPage {
   isLogged:boolean;
   data:Observable<any>;
   dataResponse;
+  latitud;
+  longitud;
+  resultadoGeocoder;
+  codigoPais;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private menuLogin:MenuController,public http: HttpClient) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private menuLogin:MenuController,
+              public http: HttpClient,
+              private nativeGeocoder: NativeGeocoder,
+              private geolocation: Geolocation
+            ) {
+
+
   }
 
   ionViewDidLoad() {
     //this.menuLogin.swipeEnable(false);
     console.log('ionViewDidLoad LoginPage');
+    ///obtener pais del usuario
+    let options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5
+  };
+
+  ////obtener latitud y longitud y luego con ellas el codigo de pais
+  this.geolocation.getCurrentPosition().then((resp) => {
+    this.latitud =resp.coords.latitude;
+    this.longitud=resp.coords.longitude;
+    
+    this.nativeGeocoder.reverseGeocode(this.latitud, this.longitud, options)
+    .then((result: NativeGeocoderReverseResult[]) => { 
+            this.resultadoGeocoder= result[0];
+            this.codigoPais = result[0].countryCode;
+            //almacenar en memoria el codigo del pais
+            window.localStorage['codigoPais'] = this.codigoPais;
+
+           }).catch((error: any) => console.log(error));
+
+          }).catch((error) => {
+     console.log('Error getting location', error);
+   }); 
+
+
+
+
   }
 
   ingresar(){
