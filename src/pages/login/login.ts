@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, AlertController  } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from '../../../node_modules/rxjs/Observable';
 import { HomePage } from '../../pages/home/home';
@@ -33,7 +33,8 @@ export class LoginPage {
               private menuLogin:MenuController,
               public http: HttpClient,
               private nativeGeocoder: NativeGeocoder,
-              private geolocation: Geolocation
+              private geolocation: Geolocation,
+              private alerta : AlertController
             ) {
 
 
@@ -85,7 +86,13 @@ export class LoginPage {
       },
       (error)=>{console.log(error);
                 this.isLogged=false; 
-                console.log(this.isLogged);   
+                console.log(this.isLogged);
+                let alert = this.alerta.create({
+                  title: 'Datos Incorrectos',
+                  subTitle: 'Escribe el usuario y contrasena correctos',
+                  buttons: ['Cerrar']
+                });
+                alert.present();   
       },
       () => {  console.log(this.dataResponse); 
                console.log(this.isLogged);  
@@ -93,6 +100,7 @@ export class LoginPage {
                if(this.isLogged){
                 this.navCtrl.push(HomePage);
                 }
+          
              }
     )
   }

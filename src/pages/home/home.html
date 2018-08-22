@@ -8,8 +8,39 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>En construccion...</h3>
-   Pagina de Inicio calculadora de costos epson
+  <h3>Calculadora de Costes EPSON TCO</h3>
+  <ion-grid>
+    <ion-row>
+        <ion-col >
+        <ion-card>
+            <ion-img (click)="cargarVistaOfertas()"  style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/sublimacion.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>
+              Ofertas
+               </ion-card-title>
+              <p>
+               Ofertas Disponibles
+              </p>
+            </ion-card-content>
+        </ion-card>
+        </ion-col >
+     </ion-row>
+    <ion-row>
+      <ion-col >
+          <ion-card>
+              <ion-img (click)="cargarVistaProductos()"  style="object-fit:cover; width: 120px; height: 120px;" src="../../assets/imgs/solvente.jpg"></ion-img>
+              <ion-card-content>
+                <ion-card-title>
+                Productos
+                 </ion-card-title>
+                <p>
+                Producto creados
+                </p>
+              </ion-card-content>
+          </ion-card>
+        </ion-col>
+     </ion-row>
+  </ion-grid>
 </ion-content>
 
 
