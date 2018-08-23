@@ -15,7 +15,8 @@
     <ion-col style="text-align: left" >
     <b>Nombre</b> : {{producto.nombre}}  <br>
     <b>Videos</b> : <a target="_blank"  [ngClass]="{'hide' : (producto.video_youtube_1 ==null)}" href="{{producto.video_youtube_1}}"><ion-icon name="logo-youtube">&nbsp;&nbsp;</ion-icon></a><a target="_blank"  [ngClass]="{'hide' : (producto.video_youtube_2 ==null)}" href="{{producto.video_youtube_2}}"><ion-icon name="logo-youtube">&nbsp;&nbsp;</ion-icon></a> <br>
-    <b>Descripcion Tecnica</b>: <a target="_blank" href="{{producto.descripcion_pdf}}"><ion-icon name="document">&nbsp;&nbsp;</ion-icon></a> 
+    <b>Descripcion Tecnica</b>: <a target="_blank" href="{{producto.descripcion_pdf}}"><ion-icon name="document">&nbsp;&nbsp;</ion-icon></a><br> 
+    <b>Calcular TCO</b> : <ion-icon  (click)="cargarTcoSublimacion()" name="calculator">&nbsp;&nbsp;</ion-icon>
   </ion-col>
   </ion-row>
   <ion-row>

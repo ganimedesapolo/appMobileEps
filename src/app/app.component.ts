@@ -9,13 +9,15 @@ import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
 import { LoginPage } from '../pages/login/login';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
+  //rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 

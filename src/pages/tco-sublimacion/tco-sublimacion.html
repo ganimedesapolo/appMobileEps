@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title ></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h2>Calculo TCO</h2>
+<br><br>
+   <ion-item>
+      <ion-label floating>Costo Tinta</ion-label>
+      <ion-input  type="number" [(ngModel)]="costoTinta" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>Resolucion</ion-label>
+      <ion-select cancelText="Cancelar" [(ngModel)]="resolucion">
+        <ion-option value="720">720x720</ion-option>
+        <ion-option value="1140">720x1140</ion-option>
+      </ion-select>
+    </ion-item>    
+    <br>
+    <h6>Cobertura de Color</h6>
+    <ion-list radio-group [(ngModel)]="cobertura">
+     <ion-item>
+        <ion-thumbnail item-start>
+              <img src="../../assets/imgs/cafegranos.jpg">
+        </ion-thumbnail> 
+        <ion-label>Cafe con Granos (17%)</ion-label>
+        <ion-radio value="1" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+              <img src="../../assets/imgs/pastel.jpg">
+        </ion-thumbnail>
+        <ion-label>Pastel (45%)</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+              <img src="../../assets/imgs/satelite.jpg">
+        </ion-thumbnail>
+        <ion-label>Satelite (63%)</ion-label>
+        <ion-radio value="3" ></ion-radio>
+      </ion-item>
+      <ion-item>
+       <ion-thumbnail item-start>
+              <img src="../../assets/imgs/tazacafe.png">
+        </ion-thumbnail>
+        <ion-label>Taza de Cafe (20%)</ion-label>
+        <ion-radio value="4" ></ion-radio>
+      </ion-item>
+    </ion-list>
+   <br> 
+   <br>
+   <ion-item>
+     <ion-label>Tipo Cliente</ion-label>
+     <ion-select cancelText="Cancelar" [(ngModel)]="tipoCliente">
+       <ion-option value="1">Cliente Epson</ion-option>
+       <ion-option value="2">VIP10</ion-option>
+       <ion-option value="3">VIP20</ion-option>
+       <ion-option value="4">VIP30</ion-option>
+     </ion-select>
+   </ion-item> 
+   
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button block color="secondary" (click)="calcularTcoSublimacion()">
+         Ingresar
+        </button>
+      </ion-col>
+    </ion-row>
+
+</ion-content>
