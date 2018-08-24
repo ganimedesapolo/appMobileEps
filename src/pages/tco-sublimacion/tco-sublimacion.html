@@ -30,28 +30,28 @@
               <img src="../../assets/imgs/cafegranos.jpg">
         </ion-thumbnail> 
         <ion-label>Cafe con Granos (17%)</ion-label>
-        <ion-radio value="1" checked></ion-radio>
+        <ion-radio value="0.17" checked></ion-radio>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
               <img src="../../assets/imgs/pastel.jpg">
         </ion-thumbnail>
         <ion-label>Pastel (45%)</ion-label>
-        <ion-radio value="2"></ion-radio>
+        <ion-radio value="0.45"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
               <img src="../../assets/imgs/satelite.jpg">
         </ion-thumbnail>
         <ion-label>Satelite (63%)</ion-label>
-        <ion-radio value="3" ></ion-radio>
+        <ion-radio value="0.63" ></ion-radio>
       </ion-item>
       <ion-item>
        <ion-thumbnail item-start>
               <img src="../../assets/imgs/tazacafe.png">
         </ion-thumbnail>
         <ion-label>Taza de Cafe (20%)</ion-label>
-        <ion-radio value="4" ></ion-radio>
+        <ion-radio value="0.2" ></ion-radio>
       </ion-item>
     </ion-list>
    <br> 
@@ -65,11 +65,16 @@
        <ion-option value="4">VIP30</ion-option>
      </ion-select>
    </ion-item> 
+   <br>
+   <ion-item>
+    <ion-label color="primary">Resultado</ion-label>
+    <ion-input [(ngModel)]="resultado"  disabled="true" type="number" placeholder="Resultado"></ion-input>
+  </ion-item>
    
     <ion-row>
       <ion-col text-center>
         <button ion-button block color="secondary" (click)="calcularTcoSublimacion()">
-         Ingresar
+         Calcular
         </button>
       </ion-col>
     </ion-row>
