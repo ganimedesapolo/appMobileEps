@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OfertaProvider } from '../../providers/oferta/oferta';
 import { TcoSublimacionPage } from '../tco-sublimacion/tco-sublimacion';
+import { TcoTecnicaPage } from '../tco-tecnica/tco-tecnica';
 
 /**
  * Generated class for the ProductosLineaVistaPage page.
@@ -34,6 +35,10 @@ export class ProductosLineaVistaPage {
 
   cargarTcoSublimacion(){
     this.navCtrl.push(TcoSublimacionPage);
+  }
+
+  cargarTcoTecnica(){
+    this.navCtrl.push(TcoTecnicaPage);
   }
 
 

@@ -14,6 +14,7 @@ import { ProductosVistaPage } from '../pages/productos-vista/productos-vista';
 import { ProductosLineaVistaPage } from '../pages/productos-linea-vista/productos-linea-vista';
 import { LoginPage } from '../pages/login/login';
 import { TcoSublimacionPage } from '../pages/tco-sublimacion/tco-sublimacion';
+import { TcoTecnicaPage } from '../pages/tco-tecnica/tco-tecnica';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProductosVistaPage,
     ProductosLineaVistaPage,
     LoginPage,
-    TcoSublimacionPage
+    TcoSublimacionPage,
+    TcoTecnicaPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProductosVistaPage,
     ProductosLineaVistaPage,
     LoginPage,
-    TcoSublimacionPage
+    TcoSublimacionPage,
+    TcoTecnicaPage
   ],
   providers: [
     StatusBar,
