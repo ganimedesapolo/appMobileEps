@@ -29,23 +29,20 @@ export class TcoTecnicaPage {
 
 
   calcularTcoSublimacion(){
-    let capacidadCartucho = 1000;
+    let capacidadCartucho = 700;
     let costoTintaOriginalml=this.costoTinta/capacidadCartucho; 
     let coberturaCalculo;
     let costoTintOriginalM2;
 
     if(this.resolucion==360){
-      if(this.cobertura==0.17) coberturaCalculo = 1.9;
-      if(this.cobertura==0.45)  coberturaCalculo = 4.9;
-      if(this.cobertura==0.63)  coberturaCalculo = 6.3;
-      if(this.cobertura==0.2)  coberturaCalculo = 2.4;
-    }
+      if(this.cobertura==0.15) coberturaCalculo = 1.87;
+      if(this.cobertura==0.45)  coberturaCalculo = 6.02;
+      if(this.cobertura==0.13)  coberturaCalculo = 1.2;
+          }
 
     if(this.resolucion==720){
-      if(this.cobertura==0.17) coberturaCalculo = 2.6;
-      if(this.cobertura==0.45)  coberturaCalculo = 6.3;
-      if(this.cobertura==0.63)  coberturaCalculo = 9.8;
-      if(this.cobertura==0.2)  coberturaCalculo = 3.1;
+      if(this.cobertura==0.2) coberturaCalculo = 5.41;
+      if(this.cobertura==0.6)  coberturaCalculo = 13.41;
     }
 
     costoTintOriginalM2 = coberturaCalculo*costoTintaOriginalml;
