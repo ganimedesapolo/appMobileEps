@@ -8,7 +8,8 @@
 </ion-header>
 
 <ion-content padding>
-<h2>Calculo TCO Solvente</h2>
+<h2>Calculo TCO Sublimacion {{modeloImpresora}}</h2>
+<br>
 <br><br>
    <ion-item>
       <ion-label floating>Costo Tinta</ion-label>
@@ -18,44 +19,40 @@
     <ion-item>
       <ion-label>Resolucion</ion-label>
       <ion-select cancelText="Cancelar" [(ngModel)]="resolucion">
+        <ion-option selected value="360">360x720</ion-option>
         <ion-option value="720">720x720</ion-option>
-        <ion-option value="1140">720x1140</ion-option>
       </ion-select>
     </ion-item>    
     <br>
     <h6>Cobertura de Color</h6>
+    <div>
     <ion-list radio-group [(ngModel)]="cobertura">
       <ion-item>
         <ion-thumbnail item-start>
-              <img src="../../assets/imgs/satelite.jpg">
+              <img src="../../assets/imgs/g5_63.jpg">
         </ion-thumbnail>
-        <ion-label>Satelite (63%)</ion-label>
-        <ion-radio value="0.63" ></ion-radio>
+        <ion-label>G5 (63%)</ion-label>
+        <ion-radio value="0.63"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
-              <img src="../../assets/imgs/pastel.jpg">
+              <img src="../../assets/imgs/g4_50.jpg">
         </ion-thumbnail>
-        <ion-label>Pastel (45%)</ion-label>
-        <ion-radio value="0.45"></ion-radio>
-      </ion-item>
-      <ion-item>
-       <ion-thumbnail item-start>
-              <img src="../../assets/imgs/tazacafe.png">
-        </ion-thumbnail>
-        <ion-label>Taza de Cafe (20%)</ion-label>
-        <ion-radio value="0.2" ></ion-radio>
+        <ion-label>G4 (50%)</ion-label>
+        <ion-radio value="0.5"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
-              <img src="../../assets/imgs/cafegranos.jpg">
+              <img src="../../assets/imgs/anturios20.jpg">
         </ion-thumbnail> 
-        <ion-label>Cafe con Granos (17%)</ion-label>
-        <ion-radio value="0.17" checked></ion-radio>
+        <ion-label>Anturios (20%)</ion-label>
+        <ion-radio value="0.2" checked></ion-radio>
       </ion-item>
+     
     </ion-list>
+    </div>
+   
    <br> 
-   <br>
    <ion-item>
      <ion-label>Tipo Cliente</ion-label>
      <ion-select cancelText="Cancelar" [(ngModel)]="tipoCliente">
@@ -78,7 +75,7 @@
   
     <ion-row>
       <ion-col text-center>
-        <button ion-button block color="secondary" (click)="calcularTcoSublimacion()">
+        <button ion-button block color="secondary" (click)="calcularTcoSublimacionReal()">
          Calcular
         </button>
       </ion-col>

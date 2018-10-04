@@ -17,9 +17,8 @@ export class TcoTecnicaPage {
   costoTinta;
   resolucion=360;
   cobertura;
-  tipoCliente;
   resultado;
-  resultadoDescuento;
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -49,13 +48,7 @@ export class TcoTecnicaPage {
 
     this.resultado = costoTintOriginalM2;
 
-    if(this.tipoCliente==1) this.resultadoDescuento =(costoTintOriginalM2*1);
-    if(this.tipoCliente==2) this.resultadoDescuento = costoTintOriginalM2-(costoTintOriginalM2*0.1);
-    if(this.tipoCliente==3) this.resultadoDescuento = costoTintOriginalM2-(costoTintOriginalM2*0.2);
-    if(this.tipoCliente==4) this.resultadoDescuento = costoTintOriginalM2-(costoTintOriginalM2*0.3);
     
-
-
 
      console.log("cobertura calculo"); 
      console.log(coberturaCalculo);
@@ -64,7 +57,6 @@ export class TcoTecnicaPage {
      console.log(this.costoTinta);
      console.log(this.resolucion);
      console.log(this.cobertura);
-     console.log(this.tipoCliente);
      console.log("valor calculo final");
      console.log(costoTintOriginalM2); 
 

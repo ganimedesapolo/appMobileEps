@@ -26,19 +26,19 @@
     <h6>Cobertura de Color</h6>
     <div *ngIf="resolucion==360" >
     <ion-list radio-group [(ngModel)]="cobertura">
+    <ion-item>
+            <ion-thumbnail item-start>
+                  <img src="../../assets/imgs/pastel.jpg">
+            </ion-thumbnail>
+            <ion-label>Pastel (45%)</ion-label>
+            <ion-radio value="0.45"></ion-radio>
+     </ion-item>
      <ion-item>
         <ion-thumbnail item-start>
               <img src="../../assets/imgs/cafegranos.jpg">
         </ion-thumbnail> 
         <ion-label>Cafe con Granos (15%)</ion-label>
         <ion-radio value="0.15" checked></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-              <img src="../../assets/imgs/pastel.jpg">
-        </ion-thumbnail>
-        <ion-label>Pastel (45%)</ion-label>
-        <ion-radio value="0.45"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-thumbnail item-start>
@@ -52,42 +52,27 @@
     <div *ngIf="resolucion==720" >
       <ion-list radio-group [(ngModel)]="cobertura">
         <ion-item>
+              <ion-thumbnail item-start>
+                    <img src="../../assets/imgs/pastel.jpg">
+              </ion-thumbnail>
+              <ion-label>Pastel (60%)</ion-label>
+              <ion-radio value="0.6"></ion-radio>
+        </ion-item>
+        <ion-item>
           <ion-thumbnail item-start>
                 <img src="../../assets/imgs/cafegranos.jpg">
           </ion-thumbnail> 
           <ion-label>Cafe con Granos (20%)</ion-label>
           <ion-radio value="0.2" checked></ion-radio>
         </ion-item>
-        <ion-item>
-          <ion-thumbnail item-start>
-                <img src="../../assets/imgs/pastel.jpg">
-          </ion-thumbnail>
-          <ion-label>Pastel (60%)</ion-label>
-          <ion-radio value="0.6"></ion-radio>
-        </ion-item>
-      </ion-list>
+     </ion-list>
   </div>
    <br> 
-   <br>
-   <ion-item>
-     <ion-label>Tipo Cliente</ion-label>
-     <ion-select cancelText="Cancelar" [(ngModel)]="tipoCliente">
-       <ion-option value="1">Cliente Epson</ion-option>
-       <ion-option value="2">VIP10</ion-option>
-       <ion-option value="3">VIP20</ion-option>
-       <ion-option value="4">VIP30</ion-option>
-     </ion-select>
-   </ion-item> 
    <br>
    <ion-item>
     <ion-label color="primary">Costo Tinta</ion-label>
     <ion-input [(ngModel)]="resultado"  disabled="true" type="number" placeholder="Resultado"></ion-input>
    </ion-item>
-   <ion-item>
-    <ion-label color="danger">Costo con Descuento</ion-label>
-    <ion-input [(ngModel)]="resultadoDescuento"  disabled="true" type="number" placeholder="Resultado Descuento"></ion-input>
-  </ion-item>
-
   
     <ion-row>
       <ion-col text-center>

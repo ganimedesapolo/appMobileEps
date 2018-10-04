@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OfertaProvider } from '../../providers/oferta/oferta';
 import { TcoSublimacionPage } from '../tco-sublimacion/tco-sublimacion';
+import { TcoSublimacionRealPage } from '../tco-sublimacion-real/tco-sublimacion-real';
 import { TcoTecnicaPage } from '../tco-tecnica/tco-tecnica';
 
 /**
@@ -36,6 +37,13 @@ export class ProductosLineaVistaPage {
   cargarTcoSublimacion(){
     this.navCtrl.push(TcoSublimacionPage);
   }
+
+
+  cargarTcoSublimacionReal(modeloImpresora:string){
+    console.log(modeloImpresora)
+    this.navCtrl.push(TcoSublimacionRealPage,{'modeloImpresora':modeloImpresora} );
+  }
+
 
   cargarTcoTecnica(){
     this.navCtrl.push(TcoTecnicaPage);
