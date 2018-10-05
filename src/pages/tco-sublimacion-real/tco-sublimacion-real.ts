@@ -22,6 +22,7 @@ export class TcoSublimacionRealPage {
   resultado;
   resultadoDescuento;
   modeloImpresora:string;
+  consumoml;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -54,6 +55,8 @@ export class TcoSublimacionRealPage {
       if(this.cobertura==0.63)  coberturaCalculo = 9;
     }
 
+    this.consumoml = coberturaCalculo;
+
     costoTintOriginalM2 = coberturaCalculo*costoTintaOriginalml;
 
     this.resultado = costoTintOriginalM2;
@@ -80,7 +83,13 @@ export class TcoSublimacionRealPage {
 
 
   if(!isNaN(this.resultado) && this.tipoCliente!=undefined ){    
-  this.navCtrl.push(ResultadoCostoPage,{'modeloImpresora':this.modeloImpresora,'costoTinta':this.resultado} );
+  this.navCtrl.push(ResultadoCostoPage,{ 'modeloImpresora':this.modeloImpresora,
+                                         'resolucion':this.resolucion,
+                                         'porcentajeCobertura':this.cobertura,
+                                         'consumoml':this.consumoml,
+                                         'costoTinta':this.resultado,
+                                         'costoTintaDescuento' : this.resultadoDescuento
+                                        });
   }
 
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ResultadoCostoPage } from '../resultado-costo/resultado-costo';
 /**
  * Generated class for the TcoSublimacionPage page.
  *
@@ -15,12 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TcoSublimacionPage {
   costoTinta;
-  resolucion;
   cobertura;
   tipoCliente;
+  resolucion;
   resultado;
   resultadoDescuento;
+  modeloImpresora:string;
+  consumoml;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.modeloImpresora = navParams.get('modeloImpresora');
   }
 
   ionViewDidLoad() {
@@ -48,6 +51,7 @@ export class TcoSublimacionPage {
       if(this.cobertura==0.2)  coberturaCalculo = 3.1;
     }
 
+    this.consumoml = coberturaCalculo;
     costoTintOriginalM2 = coberturaCalculo*costoTintaOriginalml;
 
     this.resultado = costoTintOriginalM2;
@@ -72,7 +76,16 @@ export class TcoSublimacionPage {
      console.log(costoTintOriginalM2); 
 
 
- 
+     if(!isNaN(this.resultado) && this.tipoCliente!=undefined ){    
+      this.navCtrl.push(ResultadoCostoPage,{ 'modeloImpresora':this.modeloImpresora,
+                                             'resolucion':this.resolucion,
+                                             'porcentajeCobertura':this.cobertura,
+                                             'consumoml':this.consumoml,
+                                             'costoTinta':this.resultado,
+                                             'costoTintaDescuento' : this.resultadoDescuento
+                                            });
+      }
+
 
   }
 

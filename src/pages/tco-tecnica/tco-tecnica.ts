@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ResultadoCostoPage } from '../resultado-costo/resultado-costo';
 /**
  * Generated class for the TcoTecnicaPage page.
  *
@@ -15,11 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TcoTecnicaPage {
   costoTinta;
-  resolucion=360;
   cobertura;
+  resolucion=360;
   resultado;
+  modeloImpresora:string;
+  consumoml;
  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.modeloImpresora = navParams.get('modeloImpresora');
   }
 
   ionViewDidLoad() {
@@ -44,6 +47,7 @@ export class TcoTecnicaPage {
       if(this.cobertura==0.6)  coberturaCalculo = 13.41;
     }
 
+    this.consumoml = coberturaCalculo;
     costoTintOriginalM2 = coberturaCalculo*costoTintaOriginalml;
 
     this.resultado = costoTintOriginalM2;
@@ -61,6 +65,16 @@ export class TcoTecnicaPage {
      console.log(costoTintOriginalM2); 
 
 
+     if(!isNaN(this.resultado) ){    
+      this.navCtrl.push(ResultadoCostoPage,{ 'modeloImpresora':this.modeloImpresora,
+                                             'resolucion':this.resolucion,
+                                             'porcentajeCobertura':this.cobertura,
+                                             'consumoml':this.consumoml,
+                                             'costoTinta':this.resultado,
+                                             'costoTintaDescuento' : "No Aplica a Tecnica"
+                                            });
+      }
+    
  
 
 }

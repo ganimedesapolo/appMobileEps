@@ -34,8 +34,8 @@ export class ProductosLineaVistaPage {
   }
 
 
-  cargarTcoSublimacion(){
-    this.navCtrl.push(TcoSublimacionPage);
+  cargarTcoSublimacion(modeloImpresora:string){
+    this.navCtrl.push(TcoSublimacionPage,{'modeloImpresora':modeloImpresora});
   }
 
 
@@ -45,8 +45,8 @@ export class ProductosLineaVistaPage {
   }
 
 
-  cargarTcoTecnica(){
-    this.navCtrl.push(TcoTecnicaPage);
+  cargarTcoTecnica(modeloImpresora:string){
+    this.navCtrl.push(TcoTecnicaPage,{'modeloImpresora':modeloImpresora});
   }
 
 

@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-<h2>Calculo TCO Linea Tecnica</h2>
+<h2>Calculo TCO Linea Tecnica {{modeloImpresora}}</h2>
 <br><br>
    <ion-item>
       <ion-label floating>Costo Tinta</ion-label>
@@ -69,7 +69,7 @@
   </div>
    <br> 
    <br>
-   <ion-item>
+   <ion-item style="display: none">
     <ion-label color="primary">Costo Tinta</ion-label>
     <ion-input [(ngModel)]="resultado"  disabled="true" type="number" placeholder="Resultado"></ion-input>
    </ion-item>

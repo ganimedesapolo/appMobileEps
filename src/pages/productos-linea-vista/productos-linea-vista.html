@@ -22,10 +22,10 @@
       <b>Calcular TCO</b> : <br><button (click)="cargarTcoSublimacionReal(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
     <div *ngIf="producto.idLineaNegocio==2">
-    <b>Calcular TCO</b> : <br><button (click)="cargarTcoSublimacion()" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
+    <b>Calcular TCO</b> : <br><button (click)="cargarTcoSublimacion(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
     <div *ngIf="producto.idLineaNegocio==4">
-      <b>Calcular TCO Tec.</b> : <br><button (click)="cargarTcoTecnica()" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
+      <b>Calcular TCO Tec.</b> : <br><button (click)="cargarTcoTecnica(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
     <img src="{{producto.foto}}" alt="Imagen Impresora" height="100" width="120">
     <hr>

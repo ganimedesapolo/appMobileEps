@@ -15,10 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ResultadoCostoPage {
   modeloImpresora:string;
+  resolucion;
+  porcentajeCobertura;
+  consumoml;
+  costoTintaDescuento;
   costoTinta;
    
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.modeloImpresora = navParams.get('modeloImpresora');
+    this.resolucion = navParams.get('resolucion');
+    this.porcentajeCobertura = navParams.get('porcentajeCobertura');
+    this.consumoml = navParams.get('consumoml');
+    this.costoTintaDescuento = navParams.get('costoTintaDescuento');
     this.costoTinta =  navParams.get('costoTinta');
     console.log(this.modeloImpresora)
   }

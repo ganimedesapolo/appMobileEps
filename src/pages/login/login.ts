@@ -97,6 +97,7 @@ export class LoginPage {
       () => {  console.log(this.dataResponse); 
                console.log(this.isLogged);  
                window.localStorage['userData'] = JSON.stringify(this.dataResponse);
+              /// window.localStorage['codigoPais'] = 'BR';
                if(this.isLogged){
                 this.navCtrl.push(HomePage);
                 }
