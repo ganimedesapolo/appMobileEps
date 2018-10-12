@@ -18,13 +18,13 @@
       <a target="_blank"  [ngClass]="{'hide' : (producto.video_youtube_1 ==null)}" href="{{producto.video_youtube_1}}"><button ion-button icon-only small><ion-icon  name="logo-youtube"></ion-icon></button></a>
       <a target="_blank"  [ngClass]="{'hide' : (producto.video_youtube_2 ==null)}" href="{{producto.video_youtube_2}}"><button ion-button icon-only small><ion-icon name="logo-youtube"></ion-icon></button></a> <br>
     <b>Descripcion Tecnica </b>: <br> <a target="_blank" href="{{producto.descripcion_pdf}}"><button ion-button small>PDF</button></a><br>
-    <div *ngIf="producto.idLineaNegocio==1">
+    <div *ngIf="producto.idLineaNegocio==1 && producto.banderaTco==1">
       <b>Calcular TCO</b> : <br><button (click)="cargarTcoSublimacionReal(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
-    <div *ngIf="producto.idLineaNegocio==2">
+    <div *ngIf="producto.idLineaNegocio==2 && producto.banderaTco==1">
     <b>Calcular TCO</b> : <br><button (click)="cargarTcoSublimacion(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
-    <div *ngIf="producto.idLineaNegocio==4">
+    <div *ngIf="producto.idLineaNegocio==4 && producto.banderaTco==1">
       <b>Calcular TCO Tec.</b> : <br><button (click)="cargarTcoTecnica(producto.nombre)" ion-button ><ion-icon  name="calculator"></ion-icon></button><br>
     </div>
     <img src="{{producto.foto}}" alt="Imagen Impresora" height="100" width="120">

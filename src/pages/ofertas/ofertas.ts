@@ -16,6 +16,8 @@ import { OfertaLineaPage } from '../oferta-linea/oferta-linea';
 })
 export class OfertasPage {
 
+//  codigoPais=window.localStorage['codigoPais']; 
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
