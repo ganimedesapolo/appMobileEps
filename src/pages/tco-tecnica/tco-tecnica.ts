@@ -71,7 +71,7 @@ export class TcoTecnicaPage {
                                              'porcentajeCobertura':this.cobertura,
                                              'consumoml':this.consumoml,
                                              'costoTinta':this.resultado,
-                                             'costoTintaDescuento' : "No Aplica a Tecnica"
+                                            
                                             });
       }
     
